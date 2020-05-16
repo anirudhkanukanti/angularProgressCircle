@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-progress-circle',
   templateUrl: './progress-circle.component.html',
   styleUrls: ['./progress-circle.component.scss']
 })
-export class ProgressCircleComponent implements OnInit {
+export class ProgressCircleComponent implements OnChanges {
 
   @Input() total: number;
   @Input() completed: number;
@@ -15,7 +15,7 @@ export class ProgressCircleComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnChanges(): void {
     const circumference = this.radius * 2 * 22 / 7;
     const progressPercent = Math.min(100, (this.completed / this.total) * 100);
     const offset = circumference * (1 - progressPercent / 100);
