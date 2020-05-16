@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-progress-circle',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProgressCircleComponent implements OnInit {
 
+  @Input() total: number;
+  @Input() completed: number;
+  @Input() radius: number;
+
+  circleStyles: any;
+
   constructor() { }
 
   ngOnInit(): void {
+    const circumference = this.radius * 2 * 22 / 7;
+    const progressPercent = Math.min(100, (this.completed / this.total) * 100);
+    const offset = circumference * (1 - progressPercent / 100);
+    this.circleStyles = {
+      'stroke-dasharray': circumference,
+      'stroke-dashoffset': offset,
+      'stroke-width': this.radius * 2
+    };
   }
 
 }
