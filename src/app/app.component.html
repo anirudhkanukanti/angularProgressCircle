@@ -8,12 +8,12 @@
 
         <div class="fields-container">
             <div class="field">
-                <label for="percent">Percentage</label>
-                <input id="percent" [(ngModel)]="percent" type="number" />
+                <label for="percent">Percentage: {{percent}} %</label>
+                <input id="percent" type="range" min="0" max="100" class="slider" [(ngModel)]="percent" />
             </div>
             <div class="field">
-                <label for="radius">Radius</label>
-                <input id="radius" [(ngModel)]="radius" type="number" />
+                <label for="radius">Radius: {{radius}}</label>
+                <input id="radius" type="range" min="10" max="100" class="slider" [(ngModel)]="radius" />
             </div>
         </div>
 
