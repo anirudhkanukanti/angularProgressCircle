@@ -1,9 +1,24 @@
-<app-progress-circle [total]="100" [completed]="percent" [radius]="radius"></app-progress-circle>
-<div>
-    <label for="percent">Enter Percentage</label>:
-    <input id="percent" [(ngModel)]="percent" type="number" />
-</div>
-<div>
-    <label for="radius">Enter Radius</label>:
-    <input id="radius" [(ngModel)]="radius" type="number" />
+<div class="page-wrapper">
+
+    <div class="main-container">
+        <h1 class="header">
+            Progress Indicator
+        </h1>
+
+
+        <div class="fields-container">
+            <div class="field">
+                <label for="percent">Percentage</label>
+                <input id="percent" [(ngModel)]="percent" type="number" />
+            </div>
+            <div class="field">
+                <label for="radius">Radius</label>
+                <input id="radius" [(ngModel)]="radius" type="number" />
+            </div>
+        </div>
+
+
+        <app-progress-circle class="progress-circle" [total]="100" [completed]="percent" [radius]="radius">
+        </app-progress-circle>
+    </div>
 </div>

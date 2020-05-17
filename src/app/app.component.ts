@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  percent = 50;
-  radius = 20;
+  percent = 30;
+  radius = 40;
 }
