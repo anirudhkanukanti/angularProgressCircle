@@ -4,7 +4,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Used for Progress Circle Indicator using SVG
 
-Demo: https://anirudhkanukanti.github.io/angularProgressCircle/
+Demo: http://github.progress.codewithexpert.com/
 
 ## Development server
 
